@@ -175,3 +175,11 @@ int product::last_code(void)
     file.close();
     return t;
 }
+
+
+void main(void)
+{
+    clrscr();
+    menu m;
+    m.main_menu();
+}

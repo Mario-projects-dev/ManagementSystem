@@ -166,6 +166,8 @@ void menu::edit_menu(void)
 
 //function to returns last record
 
+
+
 int product::last_code(void)
 {
     fstream file;

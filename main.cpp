@@ -1,4 +1,4 @@
-//using namespace
+
 #include <iostream>
 #include <fstream>
 #include <process.h>
@@ -8,6 +8,8 @@
 #include <ctype.h>
 #include <conio.h>
 #include <dos.h>
+#include <windows.h>
+#include "gotoxy.h"
 
 using namespace std;
 
@@ -64,11 +66,11 @@ private:
 
 void menu::main_menu(void)
 {
-    clrscr();
+    
     char ch;
     while (1)
         {
-        clrscr();
+        
         gotoxy(10, 30);
         std::cout << "-------------------------------------------";
         gotoxy(10, 23);
@@ -117,7 +119,7 @@ void menu::edit_menu(void)
     char ch;
     while (1)
     {
-        clrscr();
+        
         gotoxy(10, 3);
         std::cout
             << "--------------------------------------------";
@@ -179,7 +181,7 @@ int product::last_code(void)
 
 void main(void)
 {
-    clrscr();
+    
     menu m;
     m.main_menu();
 }

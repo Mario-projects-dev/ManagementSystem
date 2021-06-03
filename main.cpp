@@ -642,7 +642,7 @@ void product::modify_record(int tcode)
         gotoxy(1, 16);
         
         gotoxy(1, 24);
-        clreol();
+        
         gotoxy(1, 25);
         clreol();
         gotoxy(3, 25);
@@ -664,7 +664,7 @@ void product::modify_record(int tcode)
     do
     {
         gotoxy(20, 18);
-        clreol();
+        
         cout << "Change (y/n) : ";
         ch = getche();
         ch = toupper(ch);
@@ -676,16 +676,16 @@ void product::modify_record(int tcode)
     {
         valid = 1;
         gotoxy(1, 18);
-        clreol();
+        
         gotoxy(1, 24);
-        clreol();
+        
         gotoxy(1, 25);
-        clreol();
+        
         gotoxy(3, 25);
         cout << "ENTER ITEM PRICE TO ADD IN THE MENU";
         gotoxy(5, 18);
         cout << "Item Price : ";
-        gets(t_itemprice);
+        fgets(t_itemprice, sizeof(500), stdin);
         itemprice = atof(t_itemprice);
         if (t_itemprice[0] == '0')
             return;

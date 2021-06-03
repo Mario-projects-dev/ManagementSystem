@@ -166,8 +166,6 @@ void menu::edit_menu(void)
 
 //function to returns last record
 
-
-
 int product::last_code(void)
 {
     fstream file;
@@ -179,6 +177,63 @@ int product::last_code(void)
     file.close();
     return t;
 }
+
+//function for list of items
+
+void product::list_of_item(void)
+{
+    
+    fstream file;
+    file.open("PRODUCT.DAT", ios::in);
+    file.seekg(0);
+    int row = 6, found = 0;
+    gotoxy(30, 2);
+    cout << "LIST OF ITEMS";
+    gotoxy(3, 4);
+    cout << "ITEM CODE ITEM NAME ITEM COST ITEM PRICE";
+    gotoxy(2, 5);
+    cout << "***********************************************************";
+    while (file.read((char*)this, sizeof(product)))
+    {
+        delay(20);
+        found = 1;
+        gotoxy(5, row);
+        cout << itemcode;
+        gotoxy(14, row);
+        cout << itemname;
+        gotoxy(37, row);
+        cout << itemcost;
+        gotoxy(51, row);
+        cout << itemprice;
+        if (row == 22)
+        {
+            row = 5;
+            gotoxy(1, 25);
+            cout << "Press any key to continue...";
+            getche();
+            
+            gotoxy(30, 2);
+            cout << "LIST OF ITEMS";
+            gotoxy(3, 4);
+            cout << "ITEM CODE ITEM NAME ITEM COST ITEM PRICE";
+            gotoxy(2, 5);
+            cout << "-------------------------------------------"
+                ;
+        }
+        else
+            row++;
+    }
+    if (!found)
+    {
+        gotoxy(5, 10);
+        cout << "\7Records not found";
+    }
+    gotoxy(1, 25);
+    cout << "Press any key to continue...";
+    getche();
+    file.close();
+}
+
 
 
 void main(void)

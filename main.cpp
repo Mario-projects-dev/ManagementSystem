@@ -272,7 +272,7 @@ void product::add_item(void)
             cout << "ENTER ITEM NAME TO ADD IN THE MENU";
             gotoxy(5, 8);
             cout << "Item Name : ";
-            fgets(itemname);
+            fgets(itemname, sizeof(500), stdin);
             strupr(itemname);
             if (itemname[0] == '0')
                 return;

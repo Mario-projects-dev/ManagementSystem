@@ -10,6 +10,7 @@
 #include <dos.h>
 #include <windows.h>
 #include "gotoxy.h"
+#include "date.h"
 
 using namespace std;
 
@@ -297,7 +298,7 @@ void product::add_item(void)
             cout << "ENTER ITEM COST TO ADD IN THE MENU";
             gotoxy(5, 10);
             cout << "Item Cost : ";
-            fgets(t_itemcost);
+            fgets(t_itemcost, sizeof(500), stdin);
             itemcost = atof(t_itemcost);
             if (t_itemcost[0] == '0')
                 return;
@@ -322,7 +323,7 @@ void product::add_item(void)
             cout << "ENTER ITEM PRICE TO ADD IN THE MENU";
             gotoxy(5, 12);
             cout << "Item Price : ";
-            fgets(t_itemprice);
+            fgets(t_itemprice, sizeof(500), stdin);
             itemprice = atof(t_itemprice);
             if (t_itemprice[0] == '0')
                 return;
@@ -488,7 +489,7 @@ void product::delete_item(void)
     cout << "Press <ENTER> to see the list";
     gotoxy(5, 3);
     cout << "Enter Item Code of the item to be deleted : ";
-    fgets(t_code);
+    fgets(t_code, sizeof(500), stdin);
     t = atoi(t_code);
     tcode = t;
     if (t_code[0] == '0')
@@ -502,7 +503,7 @@ void product::delete_item(void)
         cout << "Press <ENTER> to Exit";
         gotoxy(5, 24);
         cout << "Enter Item Code of the item to be deleted : ";
-        fgets(t_code);
+        fgets(t_code, sizeof(500), stdin);
         t = atoi(t_code);
         tcode = t;
         if (tcode == 0)
@@ -644,12 +645,12 @@ void product::modify_record(int tcode)
         gotoxy(1, 24);
         
         gotoxy(1, 25);
-        clreol();
+       
         gotoxy(3, 25);
         cout << "ENTER ITEM COST TO ADD IN THE MENU";
         gotoxy(5, 16);
         cout << "Item Cost : ";
-        gets(t_itemcost);
+        fgets(t_itemcost, sizeof(500), stdin);
         itemcost = atof(t_itemcost);
         if (t_itemcost[0] == '0')
             return;
@@ -700,11 +701,11 @@ void product::modify_record(int tcode)
     do
     {
         gotoxy(1, 21);
-        clreol();
+       
         gotoxy(1, 24);
-        clreol();
+       
         gotoxy(1, 25);
-        clreol();
+       
         gotoxy(5, 21);
         cout << "Do you want to save this record (y/n) : ";
         ch = getche();
@@ -727,7 +728,7 @@ void product::modify_record(int tcode)
     file.write((char*)this, sizeof(product));
     file.close();
     sort();
-    clrscr();
+   
     gotoxy(5, 15);
     cout << "\7Record Modified";
     getch();
@@ -745,7 +746,7 @@ void product::modify_item(void)
     cout << "Press <ENTER> to see the list";
     gotoxy(5, 3);
     cout << "Enter Item Code of the item to be Modify : ";
-    gets(t_code);
+    fgets(t_code, sizeof(500), stdin);
     t = atoi(t_code);
     tcode = t;
     if (t_code[0] == '0')
@@ -754,12 +755,12 @@ void product::modify_item(void)
     {
         list_of_item();
         gotoxy(1, 25);
-        clreol();
+        
         gotoxy(3, 25);
         cout << "Press <ENTER> to Exit";
         gotoxy(5, 24);
         cout << "Enter Item Code of the item to be modify : ";
-        gets(t_code);
+        fgets(t_code, sizeof(500), stdin);
         t = atoi(t_code);
         tcode = t;
         if (tcode == 0)
@@ -848,7 +849,7 @@ void product::purchase(void)
         cout << "Press <ENTER> to see the list";
         gotoxy(5, 3);
         cout << "Enter Item Code of the item to be Purchase : ";
-        gets(t_code);
+        fgets(t_code, sizeof(500), stdin);
         t = atoi(t_code);
         tcode = t;
         if (t_code[0] == '0')
@@ -861,12 +862,12 @@ void product::purchase(void)
         {
             list_of_item();
             gotoxy(1, 25);
-            clreol();
+            
             gotoxy(3, 25);
             cout << "Press <ENTER> to Exit";
             gotoxy(5, 24);
             cout << "Enter Item Code of the item to be Purchase : ";
-            gets(t_code);
+            fgets(t_code, sizeof(500), stdin);
             t = atoi(t_code);
             tcode = t;
             if (tcode == 0)
@@ -893,11 +894,11 @@ void product::purchase(void)
         {
             valid = 1;
             gotoxy(1, 8);
-            clreol();
+            
             gotoxy(1, 24);
-            clreol();
+            
             gotoxy(1, 25);
-            clreol();
+            
             gotoxy(3, 25);
             cout << "ENTER QUANTITY TO BE PURCHASE IN Kg.";
             gotoxy(5, 8);
@@ -921,7 +922,7 @@ void product::purchase(void)
         do
         {
             gotoxy(5, 10);
-            clreol();
+            
             gotoxy(5, 10);
             cout << "Do you want to cancel this purchase (y/n) : ";
             ch = getche();
@@ -952,7 +953,7 @@ void product::purchase(void)
         do
         {
             gotoxy(5, 12);
-            clreol();
+            
             gotoxy(5, 12);
             cout << "Do you want to purchase more (y/n) : ";
             ch = getche();

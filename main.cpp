@@ -10,7 +10,7 @@
 #include <dos.h>
 #include <windows.h>
 #include "gotoxy.h"
-#include "date.h"
+
 #include <locale.h>
 #include <time.h>
 
@@ -1024,7 +1024,7 @@ void account::prepare_bill(int t_billno)
     fstream file;
     file.open("BILL.DAT", ios::in);
     file.seekg(0);
-    while (file.read((char*)this, sizeof(account)) != 0)
+    while (file.read((char*)this, (sizeof(account)) != 0))
     {
         if (billno == t_billno)
         {
@@ -1076,7 +1076,7 @@ void account::bill_list(void)
     while (file.read((char*)this, sizeof(account)))
     {
         row++;
-        delay(20);
+        Sleep(200);
         found = 1;
         if (prev_billno != billno)
         {

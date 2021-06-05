@@ -11,6 +11,8 @@
 #include <windows.h>
 #include "gotoxy.h"
 #include "date.h"
+#include <locale.h>
+#include <time.h>
 
 using namespace std;
 
@@ -836,12 +838,7 @@ void product::purchase(void)
     int t_itemcode;
     float t_qty, t_cost, t_price;
     char t_itemname[30];
-    struct date d;
-    int d1, m1, y1;
-    getdate(&d);
-    d1 = d.da_day;
-    m1 = d.da_mon;
-    y1 = d.da_year;
+   
     do
     {
         
@@ -888,7 +885,9 @@ void product::purchase(void)
             return;
         }
         gotoxy(60, 2);
-        cout << "Date:" << d1 << "/" << m1 << "/" << y1;
+        time_t t = time(NULL);
+        struct tm tm = *localtime(&t);
+        cout << "Date:" << tm.tm_mday << "/" << tm.tm_mon << "/" << tm.tm_year;
         display_record(tcode);
         do
         {
@@ -984,15 +983,8 @@ int account::last_billno(void)
 void account::add_bill(int t_billno, int t_itemcode, char
     t_itemname[30], float t_qty, float t_cost, float t_price)
 {
-    struct date d;
-    int d1, m1, y1;
-    getdate(&d);
-    d1 = d.da_day;
-    m1 = d.da_mon;
-    y1 = d.da_year;
-    dd = d1;
-    mm = m1;
-    yy = y1;
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
     code = t_itemcode;
     strcpy(name, t_itemname);
     cost = t_cost;
@@ -1011,17 +1003,13 @@ void account::add_bill(int t_billno, int t_itemcode, char
 void account::prepare_bill(int t_billno)
 {
     
-    struct date d;
-    int d1, m1, y1;
-    getdate(&d);
-    d1 = d.da_day;
-    m1 = d.da_mon;
-    y1 = d.da_year;
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
     float total = 0.0, total_bill = 0.0;
     gotoxy(33, 3);
     cout << "CUSTOMER BILL";
     gotoxy(55, 5);
-    cout << "Date:" << d1 << "/" << m1 << "/" << y1;
+    cout << "Date:" << tm.tm_mday << "/" << tm.tm_mon << "/" << tm.tm_year;
     gotoxy(8, 7);
     cout << "ITEMS PURCHASED";
     gotoxy(8, 8);
@@ -1128,7 +1116,7 @@ void account::bill_list(void)
             gotoxy(1, 25);
             cout << "Press any key to continue...";
             getche();
-            clrscr();
+            
             gotoxy(30, 2);
             cout << "LIST OF BILLS";
             gotoxy(3, 4);

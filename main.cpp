@@ -1,3 +1,6 @@
+// author: Mario 
+// source of knowledge: https://www.cplusplus.com/
+
 #include <cstdio>
 #include <iostream>
 #include <fstream>
@@ -6,8 +9,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-#include <conio.h>
-#include <dos.h>
 #include <windows.h>
 #include "gotoxy.h"
 
@@ -253,7 +254,7 @@ void product::add_item(void)
         gotoxy(27, 3);
         cout << "ADDITION OF PRODUCTS";
         gotoxy(26, 4);
-        cout << "********************";
+        cout << "--------------------";
         gotoxy(5, 6);
         cout << "Item Code : " << tcode;
         gotoxy(5, 8);
@@ -266,11 +267,11 @@ void product::add_item(void)
         {
             valid = 1;
             gotoxy(1, 8);
-            
+            system("cls");
             gotoxy(1, 24);
-            
+            system("cls");
             gotoxy(1, 25);
-           
+            system("cls");
             gotoxy(3, 25);
             cout << "ENTER ITEM NAME TO ADD IN THE MENU";
             gotoxy(5, 8);
@@ -291,11 +292,11 @@ void product::add_item(void)
         {
             valid = 1;
             gotoxy(1, 10);
-            
+            system("cls");
             gotoxy(1, 24);
-           
+            system("cls");
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(3, 25);
             cout << "ENTER ITEM COST TO ADD IN THE MENU";
             gotoxy(5, 10);
@@ -316,11 +317,11 @@ void product::add_item(void)
         {
             valid = 1;
             gotoxy(1, 12);
-            
+            system("cls");
             gotoxy(1, 24);
-           
+            system("cls");
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(3, 25);
             cout << "ENTER ITEM PRICE TO ADD IN THE MENU";
             gotoxy(5, 12);
@@ -340,9 +341,9 @@ void product::add_item(void)
         do
         {
             gotoxy(1, 15);
-            
+            system("cls");
             gotoxy(1, 24);
-            
+            system("cls");
             gotoxy(1, 25);
             
             gotoxy(5, 15);
@@ -364,11 +365,11 @@ void product::add_item(void)
         do
         {
             gotoxy(1, 17);
-            
+            system("cls");
             gotoxy(1, 24);
-            
+            system("cls");
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(5, 17);
             cout << "Do you want to add more records (y/n) : ";
             ch = getche();

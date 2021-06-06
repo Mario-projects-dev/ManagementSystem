@@ -1,3 +1,6 @@
+//created function to reuse gotoxy function
+//it set console cursor to requested coordinates
+
 #pragma once
 
 #include<iostream>

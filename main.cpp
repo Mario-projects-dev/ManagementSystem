@@ -501,7 +501,7 @@ void product::delete_item(void)
     {
         list_of_item();
         gotoxy(1, 25);
-        
+        system("cls");
         gotoxy(3, 25);
         cout << "Press <ENTER> to Exit";
         gotoxy(5, 24);
@@ -608,11 +608,11 @@ void product::modify_record(int tcode)
     {
         valid = 1;
         gotoxy(1, 14);
-        
+        system("cls");
         gotoxy(1, 24);
-        
+        system("cls");
         gotoxy(1, 25);
-        
+        system("cls");
         gotoxy(3, 25);
         cout << "ENTER ITEM NAME TO ADD IN THE MENU";
         gotoxy(5, 14);
@@ -644,11 +644,11 @@ void product::modify_record(int tcode)
     {
         valid = 1;
         gotoxy(1, 16);
-        
+        system("cls");
         gotoxy(1, 24);
-        
+        system("cls");
         gotoxy(1, 25);
-       
+        system("cls");
         gotoxy(3, 25);
         cout << "ENTER ITEM COST TO ADD IN THE MENU";
         gotoxy(5, 16);
@@ -668,7 +668,7 @@ void product::modify_record(int tcode)
     do
     {
         gotoxy(20, 18);
-        
+        system("cls");
         cout << "Change (y/n) : ";
         ch = getche();
         ch = toupper(ch);
@@ -680,11 +680,11 @@ void product::modify_record(int tcode)
     {
         valid = 1;
         gotoxy(1, 18);
-        
+        system("cls");
         gotoxy(1, 24);
-        
+        system("cls");
         gotoxy(1, 25);
-        
+        system("cls");
         gotoxy(3, 25);
         cout << "ENTER ITEM PRICE TO ADD IN THE MENU";
         gotoxy(5, 18);
@@ -704,11 +704,11 @@ void product::modify_record(int tcode)
     do
     {
         gotoxy(1, 21);
-       
+        system("cls");
         gotoxy(1, 24);
-       
+        system("cls");
         gotoxy(1, 25);
-       
+        system("cls");
         gotoxy(5, 21);
         cout << "Do you want to save this record (y/n) : ";
         ch = getche();
@@ -894,11 +894,11 @@ void product::purchase(void)
         {
             valid = 1;
             gotoxy(1, 8);
-            
+            system("cls");
             gotoxy(1, 24);
-            
+            system("cls");
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(3, 25);
             cout << "ENTER QUANTITY TO BE PURCHASE IN Kg.";
             gotoxy(5, 8);
@@ -1147,7 +1147,7 @@ void account::bill_list(void)
 
 void main(void)
 {
-    
+    system("cls");
     menu m;
     m.main_menu();
 }

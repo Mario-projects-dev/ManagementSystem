@@ -524,7 +524,7 @@ void product::delete_item(void)
     do
     {
         gotoxy(1, 8);
-        
+        system("cls");
         gotoxy(5, 8);
         cout << "Do you want to delete this record (y/n) : ";
         ch = getche();
@@ -572,11 +572,11 @@ void product::modify_record(int tcode)
     {
         valid = 1;
         gotoxy(1, 12);
-        
+        system("cls");
         gotoxy(1, 24);
-        
+        system("cls");
         gotoxy(1, 25);
-        
+        system("cls");
         gotoxy(3, 25);
         cout << "ENTER ITEM CODE TO ADD IN THE MENU";
         gotoxy(5, 12);
@@ -596,7 +596,7 @@ void product::modify_record(int tcode)
     do
     {
         gotoxy(20, 14);
-        
+        system("cls");
         cout << "Change (y/n) : ";
         ch = getche();
         ch = toupper(ch);
@@ -758,7 +758,7 @@ void product::modify_item(void)
     {
         list_of_item();
         gotoxy(1, 25);
-        
+        system("cls");
         gotoxy(3, 25);
         cout << "Press <ENTER> to Exit";
         gotoxy(5, 24);
@@ -860,7 +860,7 @@ void product::purchase(void)
         {
             list_of_item();
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(3, 25);
             cout << "Press <ENTER> to Exit";
             gotoxy(5, 24);
@@ -953,7 +953,7 @@ void product::purchase(void)
         do
         {
             gotoxy(5, 12);
-            
+            system("cls");
             gotoxy(5, 12);
             cout << "Do you want to purchase more (y/n) : ";
             ch = getche();

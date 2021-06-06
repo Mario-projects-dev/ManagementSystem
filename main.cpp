@@ -345,7 +345,7 @@ void product::add_item(void)
             gotoxy(1, 24);
             system("cls");
             gotoxy(1, 25);
-            
+            system("cls");
             gotoxy(5, 15);
             cout << "Do you want to save this record (y/n) : ";
             ch = getche();

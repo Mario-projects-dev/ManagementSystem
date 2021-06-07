@@ -11,7 +11,6 @@
 #include <ctype.h>
 #include <windows.h>
 #include "gotoxy.h"
-
 #include <locale.h>
 #include <time.h>
 
@@ -922,7 +921,7 @@ void product::purchase(void)
         do
         {
             gotoxy(5, 10);
-            
+            system("cls");
             gotoxy(5, 10);
             cout << "Do you want to cancel this purchase (y/n) : ";
             ch = getche();
